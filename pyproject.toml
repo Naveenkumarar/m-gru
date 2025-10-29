@@ -3,7 +3,7 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "m-gru"
+name = "mgru"
 version = "0.1.0"
 description = "Memento-GRU (M-GRU): a delay-aware GRU with Smith predictor and adaptive feedback."
 readme = "README.md"
