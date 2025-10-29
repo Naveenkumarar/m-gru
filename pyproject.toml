@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memento-gru"
+version = "0.1.0"
+description = "Memento-GRU (M-GRU): a delay-aware GRU with Smith predictor and adaptive feedback."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "M-GRU Authors", email = "author@example.com"}]
+dependencies = [
+  "torch>=2.1",
+  "numpy>=1.23",
+  "matplotlib>=3.7",
+  "tqdm>=4.66",
+  "rich>=13.7",
+  "pyyaml>=6.0",
+]
+
+[project.scripts]
+mgru = "mgru.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.ruff]
+line-length = 100
+select = ["E","F","I","B","UP"]
+ignore = ["E203","E266","E501"]
+
+[tool.mypy]
+python_version = "3.9"
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_return_any = true
+disallow_untyped_defs = false
+strict_optional = true
+

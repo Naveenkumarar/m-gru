@@ -1,0 +1,42 @@
+Metadata-Version: 2.4
+Name: memento-gru
+Version: 0.1.0
+Summary: Memento-GRU (M-GRU): a delay-aware GRU with Smith predictor and adaptive feedback.
+Author-email: M-GRU Authors <author@example.com>
+License: MIT
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: torch>=2.1
+Requires-Dist: numpy>=1.23
+Requires-Dist: matplotlib>=3.7
+Requires-Dist: tqdm>=4.66
+Requires-Dist: rich>=13.7
+Requires-Dist: pyyaml>=6.0
+Dynamic: license-file
+
+# Memento-GRU (M-GRU)
+
+A minimal, research-friendly package implementing:
+- GRU baseline
+- Tiny-MLP predictor
+- Smith-style delay compensation
+- Adaptive feedback gain
+- Trainer, CLI, synthetic dataset, and plots
+
+## Install (editable)
+```bash
+pip install -e .
+```
+
+## Quickstart
+
+```bash
+mgru train --model gru --epochs 2
+mgru train --model mgru --epochs 2 --delay 3
+mgru eval --model mgru --ckpt .runs/mgru/latest.pt
+mgru plot --run .runs/mgru
+```
+
+See examples/ for Python APIs.
+
